@@ -26,7 +26,7 @@ func (s *server) SayHello(_ context.Context, in *pb.HelloRequest) (*pb.HelloRepl
 
 func main() {
 	flag.Parse()
-	lis, err := net.Listen("tcp", fmt.Sprint(":d%", *port))
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
 		log.Fatalf("Failed to listen: %v", err)
 	}
